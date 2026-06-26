@@ -23,7 +23,7 @@ export default function About() {
         <div className="relative shrink-0">
           <div className="w-56 h-56 md:w-64 md:h-64 rounded-full border-[6px] border-gold bg-gradient-to-br from-ocean to-navy flex items-center justify-center shadow-2xl">
             <img
-              src="/src/pages/image.png"
+              src="/public/image.png"
               alt="Yunik Dahal"
               className="w-52 h-52 md:w-60 md:h-60 rounded-full object-cover">
             </img>
