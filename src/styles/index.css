@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #0B2545;
+  --bg-mid: #0F4C81;
+  --text-main: #FDFDFD;
+}
+
+html.light {
+  --bg-deep: #F4E1B9;
+  --bg-mid: #cfe8f5;
+  --text-main: #0B2545;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Cinzel', serif;
+}
+
+/* ---------- Custom compass cursor ---------- */
+.compass-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #D4AF37;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, border-color 0.15s;
+  display: none;
+}
+@media (min-width: 769px) {
+  .compass-cursor { display: block; }
+}
+.compass-cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 10px;
+  background: #D4AF37;
+  transform: translate(-50%, -100%);
+}
+.compass-cursor.cursor-hover {
+  width: 44px;
+  height: 44px;
+  border-color: #FDFDFD;
+}
+
+/* ---------- Rope styled scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #0B2545;
+}
+::-webkit-scrollbar-thumb {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #D4AF37 0px,
+    #D4AF37 4px,
+    #b8923c 4px,
+    #b8923c 8px
+  );
+  border-radius: 8px;
+  border: 2px solid #0B2545;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 #0B2545;
+}
+
+/* ---------- Parchment texture helper ---------- */
+.parchment {
+  background-color: #F4E1B9;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(178,34,34,0.06) 0, transparent 25%),
+    radial-gradient(circle at 90% 80%, rgba(15,76,129,0.08) 0, transparent 30%),
+    repeating-linear-gradient(0deg, rgba(11,37,69,0.03) 0px, transparent 2px, transparent 4px);
+  box-shadow: inset 0 0 60px rgba(11, 37, 69, 0.25);
+}
+
+/* ---------- Rope border helper ---------- */
+.rope-border {
+  border: 4px solid transparent;
+  border-image: repeating-linear-gradient(
+    -45deg,
+    #D4AF37 0 6px,
+    #8a6d1f 6px 12px
+  ) 6;
+}
+
+.wood-card {
+  background: linear-gradient(135deg, #6b4423, #8a5a2e);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.4), 0 6px 14px rgba(0,0,0,0.4);
+  border: 2px solid #4a2e15;
+}
+
+/* hide number input spinners etc not needed; keep file lean */
